@@ -14,7 +14,7 @@ def test_calculator_add(page, fastapi_server):
     page.fill('#b', '5')
     page.click('button:text("Add")')
     page.wait_for_selector('#result:not(:empty)')  # wait for async fetch to complete
-    assert page.inner_text('#result') == 'Calculation Result: 15'
+    assert page.inner_text('#result') == 'Result: 15'
 
 @pytest.mark.e2e
 def test_calculator_divide_by_zero(page, fastapi_server):
